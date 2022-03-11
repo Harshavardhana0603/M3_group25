@@ -1,4 +1,4 @@
-﻿## Remote Keyless Entry (RKE) : 
+# Remote Keyless Entry (RKE) : 
  
  
  
@@ -48,4 +48,28 @@
 |LLR4.1|When the button is pressed four times, the system shall approach light|
 |LLR4.2|All LED's shall ON in a anti-clockwise manner, when the button is pressed four times.|
 |LLR5|The system shall be provided with data encryption and rolling code algorithms.
+
+## SWOT Analysis
+
+### Strenth
+
+###### Better Access Control.
+###### Reduced maual 
+###### Advanced Security.
+###### user-friendly
+
+## Weakness
+
+###### Chances of theft
+###### signal range
+
+## Opportunities
+###### it creates some more functions   
+###### Worldwide market remuneration
+
+## Threat
+
+###### Jamming
+###### Replay attack
+
 
