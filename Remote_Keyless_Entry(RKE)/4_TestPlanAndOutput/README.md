@@ -1,4 +1,9 @@
-﻿## High Level Test plan :
+﻿## Test Plan and Output : 
+ 
+ 
+ 
+ 
+ ## High Level Test plan :
 |ID| Description  | Input| Expected Output | Actual Output| 
 |--|--|--|--|--|
 | 01 | Remote Locking  | Button is pressed once| Door should be locked| Door is locked| 
