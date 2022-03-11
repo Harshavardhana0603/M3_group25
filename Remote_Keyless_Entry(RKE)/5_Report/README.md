@@ -15,7 +15,7 @@
 
      * [SWOT Analysis](#swot-analysis)
      
-     * [5W's & 1H](#5w-1h)
+     * [5W 1H](#5w-1h)
     
   5. [Block Diagram](#block-diagram)
      
@@ -118,11 +118,11 @@ Main function of this RKE system are:
 
 
 
-## 5W’s & 1H :
+# 5W 1H
 ![Screenshot (103)](https://user-images.githubusercontent.com/98948360/157801872-6769e0e2-f3cf-4327-ba11-0a323d103aea.png)
 
-## Architecture :
-### Behavioural Diagram
+# Block Diagram
+## Behavioral Diagram
 ![blk](https://user-images.githubusercontent.com/47130806/157797654-d98bf849-3496-4868-9b67-fad0a2fddf85.PNG)
 
 # Structural diagram
@@ -132,8 +132,7 @@ Main function of this RKE system are:
 ## Low level structural diagram
 ![4](https://user-images.githubusercontent.com/47153476/157861986-1f62e2ca-9673-419c-8e84-673a49eadb37.PNG)
 
-﻿## Test Plan and Output : 
- 
+# Testplan 
  
  
  
