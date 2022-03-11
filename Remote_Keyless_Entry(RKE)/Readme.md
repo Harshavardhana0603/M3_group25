@@ -14,7 +14,6 @@
    | 5_Report | Described about what is done in this project | SurendraKumar |
    | 6_ImagesAndVideos | Captured outputs | Spoorthi, SurendraKumar, Monish Kumar, Harshavardhana |
    | 7_Others | Conclusion | Harshavardhana |
-   |                          | Future Scope |  Harshavardhana |
    |                          | Learning Resources |  Harshavardhana |
    
    
