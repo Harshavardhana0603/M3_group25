@@ -154,6 +154,12 @@ Main function of this RKE system are:
 | 02| Unlock Indication | press the button twice | All LED's should be turned off | LED's are OFF |✔|
 | 03 | Alarm Indication | press the button three times | LED's should be turned ON in a clockwise manner | LED's are ON in clockwise manner |✔|
 | 04 | Approach light indication | press the button four times | LED's should be turned ON in a anti-clockwise manner |LED's are ON in anti-clockwise manner |✔|
+
+# Applications
+-   It provides vehicle owners with a degree of convenience, making the task of physically inserting a key unnecessary.
+-   If someone tries to unclock the vehicle without pressing key buttons, then the key alarms get activated and user gets aware of the situation.
+-   It is used in the smart home applications. A keyless entry system offers enhanced security and greater convenience for people with mobility issues and those who find             themselves arriving at the front door with their hands full.
+
  
 
 
