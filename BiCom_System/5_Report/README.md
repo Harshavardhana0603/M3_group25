@@ -1,7 +1,9 @@
 # BiCom System
 
  ### Table of contents:
- [Description](##description)
+ 1.[Description](##description)
+ 
+ 2.[Features](##features)
 
 ## Description:
 * BiCom System is a bidirectional Remote Keyless Entry system.
