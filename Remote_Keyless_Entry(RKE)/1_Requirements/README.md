@@ -39,11 +39,11 @@
 ## Low Level Requirements :
 |ID|Low Level Requirement  |
 |--|--|
-| LLR1.1 |When the user presses the button once, the car shall be locked.|
+| LLR1.1 |When the user press the button once, the car shall be locked.|
 |LLR1.2|All LED's shall be ON, when the button is pressed once.|
-|LLR2.1|When the user presses the button twice, the car shall be unlocked.|
+|LLR2.1|When the user press the button twice, the car shall be unlocked.|
 |LLR2.2|All LED's shall be OFF, when the button is pressed twice.|
-|LLR3.1|When the user presses the button three times, the alarm shall be activated or deactivated accordingly.|
+|LLR3.1|When the user press the button three times, the alarm shall be activated or deactivated accordingly.|
 |LLR3.2|All LED's shall ON in a clockwise manner, when the button is pressed three times.
 |LLR4.1|When the button is pressed four times, the system shall approach light|
 |LLR4.2|All LED's shall ON in a anti-clockwise manner, when the button is pressed four times.|
@@ -56,15 +56,15 @@
 ###### Better Access Control.
 ###### Reduced maual 
 ###### Advanced Security.
-###### user-friendly
+###### User-friendly
 
 ## Weakness
 
 ###### Chances of theft
-###### signal range
+###### Signal range
 
 ## Opportunities
-###### it creates some more functions   
+###### It creates some more functions   
 ###### Worldwide market remuneration
 
 ## Threat
