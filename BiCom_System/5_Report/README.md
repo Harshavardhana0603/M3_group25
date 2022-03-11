@@ -13,7 +13,12 @@
   
   - [Low level requiements](#low-level-requirement)
   
-   5.[Behavioural Diagram](#behavioural-diagram)
+  5.[Behavioural Diagram](#behavioural-diagram)
+  
+  6.[Low Level Flow Chart Behavioral Diagram](#low-level-flow-chart-behavioral-diagram)
+  
+  7.[Structural Diagrams](#structural-diagrams)
+  
   
 ## Description:
 * BiCom System is a bidirectional Remote Keyless Entry system.
@@ -57,7 +62,7 @@
 
 
 
-## 1)Behavioural Diagram
+## Behavioural Diagram
 
 ![bbk](https://user-images.githubusercontent.com/47130806/157829642-6824da8b-5ba1-4b1f-b0e9-614c0bac0390.PNG)
 
@@ -66,7 +71,7 @@
 <img width="457" alt="10" src="https://user-images.githubusercontent.com/99073372/157882587-2ef7280b-e095-4554-a317-1b28066f3c32.PNG">
 
 
-## 2) Structural Diagrams
+##  Structural Diagrams
 
 #### High Level Use Case Structural Diagram
 
