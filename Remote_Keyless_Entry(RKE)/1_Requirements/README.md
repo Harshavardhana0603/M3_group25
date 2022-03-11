@@ -24,6 +24,36 @@
  - It can lock, unlock, control alarm and lights of the car remotely without actually touching the car.
  - This system can be called as Remote Keyless entry (RKE) system.
  - It can be also further developed to the standards of a BiCom system.
+
+## SWOT Analysis
+
+## Strength :
+
+###### Better Access Control.
+###### Reduced maual 
+###### Advanced Security.
+###### User-friendly
+
+## Weakness :
+
+###### Chances of theft
+###### Signal range
+
+## Opportunities :
+###### It creates some more functions   
+###### Worldwide market remuneration
+
+## Threat :
+
+###### Jamming
+###### Replay attack
+
+
+
+## 5W’s & 1H :
+![Screenshot (103)](https://user-images.githubusercontent.com/98948360/157801872-6769e0e2-f3cf-4327-ba11-0a323d103aea.png)
+
+
  
 ## Requirements : 
  
@@ -49,28 +79,7 @@
 |LLR4.2|All LED's shall ON in a anti-clockwise manner, when the button is pressed four times.|
 |LLR5|The system shall be provided with data encryption and rolling code algorithms.
 
-## SWOT Analysis
 
-## Strength :
-
-###### Better Access Control.
-###### Reduced maual 
-###### Advanced Security.
-###### User-friendly
-
-## Weakness :
-
-###### Chances of theft
-###### Signal range
-
-## Opportunities :
-###### It creates some more functions   
-###### Worldwide market remuneration
-
-## Threat :
-
-###### Jamming
-###### Replay attack
 
 
 
