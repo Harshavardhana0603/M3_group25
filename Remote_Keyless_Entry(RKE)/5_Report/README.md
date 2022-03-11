@@ -31,9 +31,9 @@
    
    7. [Applications](#applications)
 
-# Abstract
+# Abstract:
 In our modern society comfort became a standard. This comfort, especially in cars can only be achieved by equipping the car with more electronic devices. Some of the electronic devices must cooperate with each other and thus they require a communication channel, which can be wired or wireless. In these days, it would be hard to sell a new car operating with traditional keys. Almost all modern cars can be locked or unlocked with a Remote Keyless System. A Remote Keyless System consists of a key fob that communicates wirelessly with the car transceiver that is responsible for locking and unlocking the car. However there are several threats for wireless communication channels. 
-# Introduction
+# Introduction:
 A Remote Keyless Entry System consists of a key fob and a car transceiver that is responsible for locking and unlocking the car. Instead of locking or unlocking the car with a traditional key the user presses a button on the key fob to lock or unlock the car doors,start or stop engines, or turn on and off anti-theft alarms. Unfortunately the keyless cars are increasingly targeted by thieves. Criminals steal vehicles through the re-programming of remote-entry keys. Thus,some insurance companies have denied the insurance for this issue. In addition a Remote Keyless System is vulnerable against a Scan Attack, Playback Attack, Two-Thief Attack,Challenge Forward Prediction Attack and a Dictionary Attack.Another threat for Remote Keyless Entry Systems are On-Board-Diagnose (OBD) key programmers.
 
 # Functions:
@@ -155,7 +155,7 @@ Main function of this RKE system are:
 | 03 | Alarm Indication | press the button three times | LED's should be turned ON in a clockwise manner | LED's are ON in clockwise manner |✔|
 | 04 | Approach light indication | press the button four times | LED's should be turned ON in a anti-clockwise manner |LED's are ON in anti-clockwise manner |✔|
 
-# Applications
+# Applications:
 -   It provides vehicle owners with a degree of convenience, making the task of physically inserting a key unnecessary.
 -   If someone tries to unclock the vehicle without pressing key buttons, then the key alarms get activated and user gets aware of the situation.
 -   It is used in the smart home applications. A keyless entry system offers enhanced security and greater convenience for people with mobility issues and those who find             themselves arriving at the front door with their hands full.
