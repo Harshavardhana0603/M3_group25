@@ -51,23 +51,23 @@
 
 ## SWOT Analysis
 
-### Strenth
+## Strength :
 
 ###### Better Access Control.
 ###### Reduced maual 
 ###### Advanced Security.
 ###### User-friendly
 
-## Weakness
+## Weakness :
 
 ###### Chances of theft
 ###### Signal range
 
-## Opportunities
+## Opportunities :
 ###### It creates some more functions   
 ###### Worldwide market remuneration
 
-## Threat
+## Threat :
 
 ###### Jamming
 ###### Replay attack
