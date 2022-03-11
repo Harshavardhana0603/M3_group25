@@ -21,10 +21,10 @@
 ### High Level Requirement
 |ID|Description|
 |:-|:-|
-|HLR1|The system shall provide the staus of the window.|
-|HLR2|The system shall provide the alarm status.|
-|HLR3|The system shall provide the car battery information.|
-|HLR4|The system shall provide the status of the car door.| 
+|HLR 1|The system shall provide the staus of the window.|
+|HLR 2|The system shall provide the alarm status.|
+|HLR 3|The system shall provide the car battery information.|
+|HLR 4|The system shall provide the status of the car door.| 
 
 ### Low Level Requirement
 |ID|Description|
