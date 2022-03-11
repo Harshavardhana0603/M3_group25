@@ -17,6 +17,12 @@
 * Waves are transmitted from key fob to car to lock and unlock the car remotely.
 * Waves transmitted from car to keyfob for displaying the information of the car status.
 
+## 5 W's & 1'H
+ ![image](https://user-images.githubusercontent.com/98866123/157860770-fa06696b-b6e6-4835-bbce-832179709d52.png)
+## SWOT Anlaysis
+ ![image](https://user-images.githubusercontent.com/98866123/157855366-995bf939-f808-497f-a32d-c434c49040e5.png)
+
+
 ## Requirements
 ### High Level Requirement
 |ID|Description|
@@ -37,3 +43,5 @@
 |LLR 3.2|All the LED's are turned ON in clockwise direction.|
 |LLR 4.1|When user press the button four times,it provide the door status.|
 |LLR 4.2|All the LED's are turned ON in anti-clockwise direction.|
+
+
