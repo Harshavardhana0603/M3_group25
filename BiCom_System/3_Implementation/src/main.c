@@ -122,7 +122,7 @@ void pw_2(void)
 }
 /**
  * @brief encryption for car_battery function
- *
+ *                                                //99007687
  */
 void pw_3(void)
 {
@@ -170,7 +170,7 @@ void pw_4(void)
  * @brief window function for window status
  *
  */
-void window(void)                                                        //99007686
+void window(void)                                                        //99007687
 {
 	delay();
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
@@ -194,7 +194,7 @@ void alarm(void)
  * @brief car_battery function for car_battery info
  *
  */
-void car_battery(void)                 //99007687
+void car_battery(void)                 //99007686
 {
 	delay();
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
