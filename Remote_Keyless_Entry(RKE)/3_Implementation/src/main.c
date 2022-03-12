@@ -195,7 +195,7 @@ void UnLock(void)
  * // clockwise function for alarm
  *
  */
-void clockwise(void)                                              //99007687
+void clockwise(void)                                              //99007689
 {
 	delay();
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
