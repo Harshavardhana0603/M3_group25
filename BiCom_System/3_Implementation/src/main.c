@@ -1,40 +1,18 @@
 #include "MyStm32f407xx.h"
-
-/*
- * Define Push Button 
- */
-#define BTN_PRESSED ENABLE
-#define BTN_PRESSED_1 DISABLE
-
-
-void Init_PushButton(void);
-void Init_LedPins(void);
-void Window_Status(void);
-void Alarm_Status(void);
-void Battery_Info(void);
-void Door_Status(void);
-
-/*
- * define delay function
- */
-void delay(void)
-{
-	for ( uint32_t i=0 ; i<500000 ; i++);
-}#include "MyStm32f407xx.h"
 #include <stdint.h>
 
 #define BTN_PRESSED ENABLE
 
-void Lock(void);
-void UnLock(void);
-void clockwise(void);
-void anticlockwise(void);
+void window(void);
+void alarm(void);
+void car_battery(void);
+void door(void);
 void pw(void);
 void pw_2(void);
 void pw_3(void);
 void pw_4(void);
 /**
- *  //delay
+ * @brief This function deals with debouncing delay of blue switch
  *
  */
 void delay(void)
@@ -45,12 +23,13 @@ void delay(void)
 int main(void)
 {
 
-	GPIO_Handle_t GpioLed, GPIOBtn; 							//PsNO=99007686
-	 * // Setting  for LEDs
+	GPIO_Handle_t GpioLed, GPIOBtn; 							//Initialising variables for led and blue switch  
+	/**
+	 * @brief Setup for LEDs                   // //99007689
 	 *
-	 */
+	 */          
 	GpioLed.pGPIOx = GPIOD;
-	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12 ;	
+	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12 ;	//Green Led
 	GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
 	GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
@@ -58,7 +37,7 @@ int main(void)
 	GPIO_Init(&GpioLed);
 
  	GpioLed.pGPIOx = GPIOD;
-	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;		
+	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;		//Orange Led
 	GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
 	GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
@@ -66,7 +45,7 @@ int main(void)
 	GPIO_Init(&GpioLed);
 
 	GpioLed.pGPIOx = GPIOD;
-	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;		
+	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;		//Red Led
 	GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
 	GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
@@ -74,14 +53,14 @@ int main(void)
 	GPIO_Init(&GpioLed);
 
 	GpioLed.pGPIOx = GPIOD;
-	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;		
+	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;		//Blue Led
 	GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
 	GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 	GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
 	GPIO_PeriClockControl(GPIOD, ENABLE);
 	GPIO_Init(&GpioLed);
 	/**
-	 * // Setup for Blue Switch
+	 * @brief Setup for Blue Switch
 	 *
 	 */
 	GPIOBtn.pGPIOx = GPIOA;
@@ -94,26 +73,26 @@ int main(void)
 
 	while(1)
 	{
-		pw();				//encryption for Lock function
+		pw();				//encryption for window function
 
-		pw_2();				//encryption for UnLock function
+		pw_2();				//encryption for alarm function
 
-		pw_3();				//encryption for clockwise function
+		pw_3();				//encryption for car_battery function
 
-		pw_4();				//encryption for anticlockwise function
+		pw_4();				//encryption for door function
 
 	}
 
 }
 /**
- * // encryption for Lock function
+ * @brief encryption for window function
  *
  */
 void pw(void)
 {
-	p1:if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0)== BTN_PRESSED)
+	p1:if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0)== BTN_PRESSED)        //99007688
 	{
-		Lock();
+		window();
 	}
 	else
 		goto p1;
@@ -121,7 +100,7 @@ void pw(void)
 }
 
 /**
- * // encryption for UnLock function
+ * @brief encryption for alarm function
  *
  */
 void pw_2(void)
@@ -137,12 +116,12 @@ void pw_2(void)
 	if(count==2)
 		{
 
-			UnLock();
+			alarm();
 
 		}
 }
 /**
- * // encryption for clockwise function
+ * @brief encryption for car_battery function
  *
  */
 void pw_3(void)
@@ -158,12 +137,12 @@ void pw_3(void)
 	if(count==3)
 		{
 
-			clockwise();
+			car_battery();
 
 		}
 }
 /**
- * // encryption for anticlock function
+ * @brief encryption for door function
  *
  */
 void pw_4(void)
@@ -179,7 +158,7 @@ void pw_4(void)
 	if(count==4)
 		{
 
-			anticlockwise();
+			door();
 
 		}
 }
@@ -188,10 +167,10 @@ void pw_4(void)
 
 
 /**
- * //Lock function for locking door
+ * @brief window function for window status
  *
  */
-void Lock(void)
+void window(void)                                                        //99007686
 {
 	delay();
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
@@ -200,10 +179,10 @@ void Lock(void)
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
 }
 /**
- * // UnLock function for unlocking door
+ * @brief alarm function for alarm status
  *
  */
-void UnLock(void)
+void alarm(void)
 {
 	delay();
 	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12, 0);
@@ -212,10 +191,10 @@ void UnLock(void)
 	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15, 0);
 }
 /**
- * // clockwise function for alarm
+ * @brief car_battery function for car_battery info
  *
  */
-void clockwise(void)
+void car_battery(void)                 //99007687
 {
 	delay();
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
@@ -235,10 +214,10 @@ void clockwise(void)
 	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15, 0);
 }
 /**
- * // anticlockwise function for approach light
+ * @brief door function for door status
  *
  */
-void anticlockwise(void)
+void door(void)
 {
 	delay();
 	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
@@ -256,166 +235,4 @@ void anticlockwise(void)
 	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14, 0);
 	delay();
 	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13, 0);
-}
-
-int main(void)
-{	
-	Init_PushButton();		
-	Init_LedPins(); 		
-
-	while(1)
-	{	
-		if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED)
-    	{
-			Window_Status();
-    	}
-    	else if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED_1)
-    	{
-    	    Alarm_Status();
-    	}
-		else if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED)
-		{
-			Battery_Info();
-		}
-		else if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED_1)
-		{
-			Door_Status();
-		}
-	}
-}
-
-/*
- * Defining of Pushbutton function
- */
-void Init_PushButton(void)
-{
-	GPIO_Handle_t GpioLed;
-
-	GpioLed.pGPIOx = GPIOD;
-	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
-	GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
-	GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-	GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-	GPIO_PeriClockControl(GPIOD, ENABLE);
-	GPIO_Init(&GpioLed);
-
-	GpioLed.pGPIOx = GPIOD;                                                               /// Psno=99007687
-    GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_13;
-    GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
-    GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-    GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-    GPIO_PeriClockControl(GPIOD, ENABLE);
-    GPIO_Init(&GpioLed);
-
-    GpioLed.pGPIOx = GPIOD;
-    GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;
-    GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
-    GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-    GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-    GPIO_PeriClockControl(GPIOD, ENABLE);
-    GPIO_Init(&GpioLed);
-
-    GpioLed.pGPIOx = GPIOD;
-    GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;
-    GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
-    GpioLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-    GpioLed.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-    GPIO_PeriClockControl(GPIOD, ENABLE);
-    GPIO_Init(&GpioLed);
-}
-/*
- * Definition of Initialising ledpin function 
- */
-void Init_LedPins(void)
-{
-	GPIO_Handle_t GpioBtn;
-	GpioBtn.pGPIOx = GPIOA;
-    GpioBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
-    GpioBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
-    GpioBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
-    GpioBtn.GPIO_PinConfig.GPIO_PinOPType = GPIO_NO_PUPD;
-    GPIO_PeriClockControl(GPIOA, ENABLE);
-    GPIO_Init(&GpioBtn);
-}
-
-/*
- * Defining a function that lights(Ons) all Leds
- */
-void Window_Status(void)
-{
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);                      //Psno=99007688
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
-}
-/*
- * Defining a function that makes all Leds Off
- */
-void Alarm_Status(void)
-{
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-}
-/*
- * Defining a function that Make leds On in a clockwise manner
- */
-
-void Battery_Info(void)
-{
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);                       //Psno=99007689
-           
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
-}
-/*
- * Defining a function that Make leds On in a Anticlockwise manner
- */
-void Door_Status(void)
-{
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);                          //Psno=99007689
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
 }
